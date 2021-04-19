@@ -1,22 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TaskForm from "./components/TaskForm";
+import { useState } from "react";
+import TaskContainer from "./components/TaskContainer";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+    console.log(tasks);
+  };
+
+  const removeTask = (index) => {
+    const newTasks = tasks.slice(); // [...tasks]
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Boring To Do List ({tasks.length})</h1>
+        <TaskContainer tasks={tasks} removeFunction={removeTask} />
+        <TaskForm addFunction={addTask} />
       </header>
     </div>
   );
