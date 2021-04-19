@@ -10,11 +10,18 @@ function App() {
     setTasks([...tasks, newTask]);
     console.log(tasks);
   };
+
+  const removeTask = (index) => {
+    const newTasks = tasks.slice(); // [...tasks]
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Boring To Do List</h1>
-        <TaskContainer tasks={tasks} />
+        <TaskContainer tasks={tasks} removeFunction={removeTask} />
         <TaskForm addFunction={addTask} />
       </header>
     </div>
