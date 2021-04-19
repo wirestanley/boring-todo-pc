@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  border-bottom: 2px solid white;
+  justify-content: space-between;
+}
+
+.container > p {
+  font-size: 1.2rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  margin-left: 40px;
+  justify-content: space-between;
+}
+
+.buttonWrapper > p {
+  color: red;
+  font-weight: 700;
+  cursor: pointer;
+}

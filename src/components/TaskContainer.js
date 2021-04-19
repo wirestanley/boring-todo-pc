@@ -1,8 +1,10 @@
+import Task from "./Task";
+
 export default function TaskContainer({ tasks }) {
   return (
     <div>
       {tasks.map((task) => {
-        return <li>{task}</li>;
+        return <Task task={task} />;
       })}
     </div>
   );
