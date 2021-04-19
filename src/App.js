@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import TaskForm from "./components/TaskForm";
 import { useState } from "react";
+import TaskContainer from "./components/TaskContainer";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Boring To Do List</h1>
+        <TaskContainer tasks={tasks} />
         <TaskForm addFunction={addTask} />
       </header>
     </div>
