@@ -44,3 +44,6 @@
 cursor: pointer;
 margin-left: 5px;
 }
+.textstyles {
+  text-shadow:  0px 0px 10px #282c34 ;
+}
