@@ -2,6 +2,7 @@ import "./App.css";
 import TaskForm from "./components/TaskForm";
 import { useState } from "react";
 import TaskContainer from "./components/TaskContainer";
+import BoringContainer from "./components/BoringContainer"
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -23,6 +24,7 @@ function App() {
         <h1>Boring To Do List ({tasks.length})</h1>
         <TaskContainer tasks={tasks} removeFunction={removeTask} />
         <TaskForm addFunction={addTask} />
+        <BoringContainer/>
       </header>
     </div>
   );
