@@ -24,7 +24,7 @@ function App() {
         <h1>Boring To Do List ({tasks.length})</h1>
         <TaskContainer tasks={tasks} removeFunction={removeTask} />
         <TaskForm addFunction={addTask} />
-        <BoringContainer/>
+        <BoringContainer addTask = {addTask}/>
       </header>
     </div>
   );

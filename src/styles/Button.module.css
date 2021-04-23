@@ -8,6 +8,8 @@
   font-weight: bold;
   color: whitesmoke;
   transition-duration: 500ms;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .button:hover {

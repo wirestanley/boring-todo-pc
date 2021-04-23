@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getTask } from "../lib/fetch";
 import Button from "./Button";
 
-export default function BoringContainer(){
+export default function BoringContainer({addTask}){
 const [boringTask, setBoringTask]= useState('')
     const handleClick = () => {
         setBoringTask ('thinking........') 
@@ -11,12 +11,15 @@ const [boringTask, setBoringTask]= useState('')
             setBoringTask (response.activity)
         })
     }
+    const handleAdd = () => {
+        addTask (boringTask)
+        setBoringTask ('')
+    }
 
     return (
         <div>
-            <h1>boringContainer</h1>
-            <Button onClick = {handleClick} text = "i am bored"/>
-            <p>{boringTask}</p>
+            <Button color = 'purple' onClick = {handleClick} text = "i am bored"/>
+           <p>{boringTask}<span className = 'heart' onClick = {handleAdd}>{boringTask &&'💚'}</span></p>
         </div>
     )
 }

@@ -40,3 +40,7 @@
 .button {
   background-color: aqua;
 }
+.heart {
+cursor: pointer;
+margin-left: 5px;
+}
